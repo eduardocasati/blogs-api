@@ -1,0 +1,12 @@
+# Pastas
+__tests__
+.github
+.trybe
+.vscode
+node_modules
+public
+
+# Arquivos
+.env
+env.example
+trybe.yml
