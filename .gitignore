@@ -7,6 +7,7 @@ node_modules
 public
 
 # Arquivos
+.gitignore
 .env
 env.example
 trybe.yml
