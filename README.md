@@ -6,23 +6,6 @@
 
 #### Autor: **Eduardo Casati**
 
-## O que foi Desenvolvido
-
-O projeto consiste em uma API e um banco de dados para a produção de conteúdo para um blog.
-
-**Funcionalidades (endpoints da API):**
-
-- Login
-- Criar um novo usuário
-- Deletar um usuário
-- Consultar a lista de usuários ou um usuário específico
-- Criar uma nova categoria
-- Consultar a lista de categorias
-- Criar um novo post no blog
-- Consultar todos os posts do blog ou um post específico
-- Atualizar um post no blog
-- Deletar um post no blog
-
 ## Objetivos do Projeto
 
 Este projeto teve como objetivo consolidar e avaliar conhecimentos dos seguintes tópicos:
@@ -33,3 +16,37 @@ Este projeto teve como objetivo consolidar e avaliar conhecimentos dos seguintes
 -  Express.js 
 -  JSON Web Tokens
 -  ORM (Sequelize)
+
+## O que foi Desenvolvido
+
+O projeto consiste em uma API e um banco de dados para a produção de conteúdo para um blog.
+
+### Rotas da API (endpoints)
+
+#### 1. Login
+      POST /login
+
+<details>
+<summary>Resposta:</summary>
+
+```
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJCcmV0dCBXaWx0c2hpcmUiLCJlbWFpbCI6ImJyZXR0QGVtYWlsLmNvbSIsImltYWdlIjpudWxsLCJpYXQiOjE3MDcxNzY2MzgsImV4cCI6MTcwNzc4MTQzOH0.RLrU3qSMR2nrjT7JPdF0pOnfgkRm_fUaU_wfRA53MV0"
+}
+```
+
+</details>
+
+## Rodando o Projeto
+
+Siga os passos abaixo:
+
+1. Crie e inicie os containers: ```docker-compose up -d --build```
+2. Acesse o terminal do container: ```docker exec -it blogs_api bash```
+   - Os comandos a seguir devem ser executados no terminal do container
+3. Instale as dependências: ```npm install```
+4. Crie o banco de dados: ```npm run prestart```
+5. Preencha o banco de dados: ```npm run seed```
+6. Inicie o servidor: ```npm start```
+
+Com o projeto inicializado após as etapas acima, você pode fazer requisições à API na porta 3001: ```http://localhost:3001/{endpoint}```.
