@@ -330,7 +330,7 @@ Não é possível cadastrar uma nova postagem com uma categoria inexistente.
       "message": "Some required fields are missing"
     }
     ```
-  - ⚠️ Uma ou mais categorias informadas no campo categoryIds não existe:
+  - ⚠️ Uma ou mais categorias informadas no campo ```categoryIds``` não existe:
     ```json
     {
       "message": "one or more \"categoryIds\" not found"
