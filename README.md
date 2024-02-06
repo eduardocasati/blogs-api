@@ -410,10 +410,8 @@ O corpo da requisição deve seguir o formato abaixo:
 
 É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
 
-O corpo da requisição deve seguir o formato abaixo:
-
 <details>
-<summary>Resposta:</summary>
+<summary>Respostas:</summary>
 </br>
 
 - ✅ **Retorna o post com sucesso:**
@@ -442,6 +440,13 @@ O corpo da requisição deve seguir o formato abaixo:
           }
       }
   ]
+}
+```
+
+- ❌ Blog post não encontrado:
+```json
+{
+   "message": "Post does not exist"
 }
 ```
 
