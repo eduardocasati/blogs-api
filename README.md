@@ -26,12 +26,45 @@ O projeto consiste em uma API e um banco de dados para a produção de conteúdo
 #### 1. Login
       POST /login
 
-<details>
-<summary>Resposta:</summary>
+O corpo da requisição deve seguir o formato abaixo:
+
+<details><summary>Formato da Requisição:</summary>
 
 ```
 {
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJCcmV0dCBXaWx0c2hpcmUiLCJlbWFpbCI6ImJyZXR0QGVtYWlsLmNvbSIsImltYWdlIjpudWxsLCJpYXQiOjE3MDcxNzY2MzgsImV4cCI6MTcwNzc4MTQzOH0.RLrU3qSMR2nrjT7JPdF0pOnfgkRm_fUaU_wfRA53MV0"
+  "email": "user@email.com",
+  "password": "123456"
+}
+```
+
+</details>
+
+<details>
+<summary>Respostas:</summary>
+</br>
+
+- ✅ **Login bem-sucedido:**
+
+```
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJCcmV0dCBXaWx0c2hpcmUiLCJlbWFpbCI6ImJyZXR0QGVtYWlsLmNvbSIsImltYWdlIjpudWxsLCJpYXQiOjE3MDcxNzY2MzgsImV4cCI6MTcwNzc4MTQzOH0.RLrU3qSMR2nrjT7JPdF0pOnfgkRm_fUaU_wfRA53MV0"
+}
+```
+
+- ⚠️ **Os campos não foram devidamente preenchidos:**
+
+```
+{
+  "message": "Some required fields are missing"
+}
+```
+
+
+- ❌ **Usuário ou senha inválidos:**
+
+```
+{
+  "message": "Invalid fields"
 }
 ```
 
