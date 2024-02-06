@@ -1,5 +1,9 @@
 # Documentação
 
+<details>
+
+<summary>Mostrar</summary>
+
 ## Métodos
 
 Requisições para a API devem seguir os padrões:
@@ -358,3 +362,5 @@ Obter blog post específico pelo ID do blog post.
       "message": "Post does not exist"
     }
     ```
+
+</details>
