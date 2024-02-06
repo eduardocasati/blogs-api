@@ -23,7 +23,8 @@ O projeto consiste em uma API e um banco de dados para a produção de conteúdo
 
 ### Rotas da API (endpoints)
 
-#### 1. Login
+#### 1. LOGIN
+
       POST /login
 
 O corpo da requisição deve seguir o formato abaixo:
@@ -65,6 +66,137 @@ O corpo da requisição deve seguir o formato abaixo:
 ```
 {
   "message": "Invalid fields"
+}
+```
+
+</details>
+
+#### 2. USER
+
+      POST /user
+
+O corpo da requisição deve seguir o formato abaixo:
+
+<details><summary>Formato da Requisição:</summary>
+
+```
+{
+  "displayName": "Name Surname",
+  "email": "user@email.com",
+  "password": "123456",
+  "image": "https://exemple-images.com/images/1234567890/image.jpg"
+}
+```
+
+O campo ```image``` não é obrigatório.
+
+</details>
+
+<details>
+<summary>Respostas:</summary>
+</br>
+
+- ✅ **Usuário criado com sucesso:**
+
+```
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJCcmV0dCBXaWx0c2hpcmUiLCJlbWFpbCI6ImJyZXR0QGVtYWlsLmNvbSIsImltYWdlIjpudWxsLCJpYXQiOjE3MDcxNzY2MzgsImV4cCI6MTcwNzc4MTQzOH0.RLrU3qSMR2nrjT7JPdF0pOnfgkRm_fUaU_wfRA53MV0"
+}
+```
+
+- ⚠️ **O campo ```displayName``` não foi devidamente preenchido com 8 caracteres ou mais**:
+
+```
+{
+  "message": "\"displayName\" length must be at least 8 characters long"
+}
+```
+
+- ⚠️ **O campo ```email``` não foi devidamente preenchido com o formato ```prefixo@domínio```**:
+
+```
+{
+  "message": "\"email\" must be a valid email"
+}
+```
+
+- ⚠️ **O campo ```password``` não foi devidamente preenchido com 6 caracteres ou mais**:
+
+```
+{
+  "message": "\"password\" length must be at least 6 characters long"
+}
+```
+
+- ⚠️ **Usuário já existente:**
+
+```
+{
+  "message": "User already registered"
+}
+```
+
+</details>
+
+</br>
+
+      GET /user
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+<details>
+<summary>Resposta:</summary>
+</br>
+
+- ✅ **Retorna a lista de usuários com sucesso:**
+
+```
+[
+  {
+      "id": 1,
+      "displayName": "Lewis Hamilton",
+      "email": "lewishamilton@gmail.com",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+  },
+  {
+      "id": 1,
+      "displayName": "Michael Schumacher",
+      "email": "MichaelSchumacher@gmail.com",
+      "image": "https://sportbuzz.uol.com.br/media/_versions/gettyimages-52491565_widelg.jpg"
+  },
+
+   /* ... */
+]
+```
+
+</details>
+
+</br>
+
+      GET /user/:id
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+<details>
+<summary>Respostas:</summary>
+</br>
+
+- ✅ **Retorna o usuário com sucesso:**
+
+```
+{
+  "id": 1,
+  "displayName": "Lewis Hamilton",
+  "email": "lewishamilton@gmail.com",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+}
+```
+
+- ⚠️ **Usuário não encontrado:**
+
+```
+{
+  "message": "User does not exist"
 }
 ```
 
