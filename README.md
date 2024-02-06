@@ -71,8 +71,6 @@ O corpo da requisição deve seguir o formato abaixo:
 
 </details>
 
-</br>
-
 #### 2. USER
 
       POST /user
@@ -161,10 +159,16 @@ O campo ```image``` não é obrigatório.
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
   },
   {
-      "id": 1,
+      "id": 2,
       "displayName": "Michael Schumacher",
-      "email": "MichaelSchumacher@gmail.com",
+      "email": "michaelSchumacher@gmail.com",
       "image": "https://sportbuzz.uol.com.br/media/_versions/gettyimages-52491565_widelg.jpg"
+  },
+  {
+      "id": 3,
+      "displayName": "Ayrton Senna",
+      "email": "ayrtonsenna@gmail.com",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Senninha_2.jpg/800px-Senninha_2.jpg"
   },
 
    /* ... */
@@ -199,6 +203,243 @@ O campo ```image``` não é obrigatório.
 ```
 {
   "message": "User does not exist"
+}
+```
+
+</details>
+
+#### 3. CATEGORIES
+
+      POST /categories
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+O corpo da requisição deve seguir o formato abaixo:
+
+<details><summary>Formato da Requisição:</summary>
+
+```
+{
+  "name": "Dicas"
+}
+```
+
+</details>
+
+<details>
+<summary>Respostas:</summary>
+</br>
+
+- ✅ **Categoria criada com sucesso:**
+
+```
+{
+  "id": 3,
+  "name": "Dicas"
+}
+```
+
+- ⚠️ **O campo ```name``` não foi devidamente preenchido (o campo não pode estar em branco)**:
+
+```
+{
+  "message": "\"name\" is required"
+}
+```
+
+</details>
+
+</br>
+
+      GET /categories
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+<details>
+<summary>Resposta:</summary>
+</br>
+
+- ✅ **Retorna a lista de categorias com sucesso:**
+
+```
+[
+  {
+      "id": 1,
+      "name": "Inovação"
+  },
+  {
+      "id": 2,
+      "name": "Escola"
+  },
+
+  /* ... */
+]
+```
+
+</details>
+
+#### 4. POST
+
+      POST /post
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+O corpo da requisição deve seguir o formato abaixo:
+
+<details><summary>Formato da Requisição:</summary>
+
+```
+{
+  "title": "Últimas atualizações, 1 de Agosto",
+  "content": "O texto completo do post",
+  "categoryIds": [1, 2]
+}
+```
+
+</details>
+
+<details>
+<summary>Respostas:</summary>
+</br>
+
+- ✅ **Post criado com sucesso:**
+
+```
+{
+  "id": 3,
+  "title": "Últimas atualizações, 1 de Agosto",
+  "content": "O texto completo do post",
+  "userId": 1,
+  "updated": "2022-05-18T18:00:01.196Z",
+  "published": "2022-05-18T18:00:01.196Z"
+}
+```
+
+- ⚠️ **Todos os campos não foram devidamente preenchidos (nenhum campo pode estar em branco)**:
+
+```
+{
+  "message": "Some required fields are missing"
+}
+```
+
+- ⚠️ **Se uma ou mais categorias informadas no campo ```categoryIds``` não existir**:
+
+```
+{
+  "message": "one or more \"categoryIds\" not found"
+}
+```
+
+</details>
+
+</br>
+
+      GET /post
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+<details>
+<summary>Respostas:</summary>
+</br>
+
+- ✅ **Retorna os posts do blog com sucesso:**
+
+```
+[
+  {
+    "id": 1,
+    "title": "Post do Ano",
+    "content": "Melhor post do ano",
+    "userId": 1,
+    "published": "2011-08-01T19:58:00.000Z",
+    "updated": "2011-08-01T19:58:51.000Z",
+    "user": {
+      "id": 1,
+      "displayName": "Lewis Hamilton",
+      "email": "lewishamilton@gmail.com",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+    },
+    "categories": [
+      {
+        "id": 1,
+        "name": "Inovação",
+        "PostCategory": {
+           "postId": 1,
+           "categoryId": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Vamos que vamos",
+    "content": "Foguete não tem ré",
+    "userId": 1,
+    "published": "2011-08-01T19:58:00.000Z",
+    "updated": "2011-08-01T19:58:51.000Z",
+    "user": {
+      "id": 2,
+      "displayName": "Michael Schumacher",
+      "email": "michaelschumacher@gmail.com",
+      "image": "https://sportbuzz.uol.com.br/media/_versions/gettyimages-52491565_widelg.jpg"
+    },
+    "categories": [
+      {
+        "id": 2,
+        "name": "Escola",
+        "PostCategory": {
+           "postId": 2,
+           "categoryId": 2
+        }
+      }
+    ]
+  }, 
+
+  /* ... */
+]
+```
+
+</details>
+
+</br>
+
+      GET /post/:id
+
+É necessário um token de autenticação passado no cabeçalho da requisição (obtido no endpoint de login).
+
+O corpo da requisição deve seguir o formato abaixo:
+
+<details>
+<summary>Resposta:</summary>
+</br>
+
+- ✅ **Retorna o post com sucesso:**
+
+```
+{
+  "id": 1,
+  "title": "Post do Ano",
+  "content": "Melhor post do ano",
+  "userId": 1,
+  "published": "2011-08-01T19:58:00.000Z",
+  "updated": "2011-08-01T19:58:51.000Z",
+  "user": {
+      "id": 1,
+      "displayName": "Lewis Hamilton",
+      "email": "lewishamilton@gmail.com",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg"
+  },
+  "categories": [
+      {
+          "id": 1,
+          "name": "Inovação",
+          "PostCategory": {
+              "postId": 1,
+              "categoryId": 1
+          }
+      }
+  ]
 }
 ```
 
