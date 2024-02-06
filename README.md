@@ -58,7 +58,7 @@ Com o projeto inicializado após as etapas acima, você pode fazer requisições
    - [Categorias](#categorias)
       - [POST /categories](#post-categories)
       - [GET /categories](#get-categories)
-   - [Blog Posts](#blog-posts)
+   - [Postagens](#postagens)
       - [POST /post](#post-post)
       - [GET /post](#get-post)
       - [GET /post/:id](#get-postid)
@@ -292,16 +292,16 @@ Obter a lista completa de categorias de postagens.
     ]
     ```
 
-## Blog Posts
+## Postagens
 
 ### ```POST /post```
 
-Criar uma novo post no blog.
+Criar uma nova postagem no blog.
 
 ##### Validações:
 
 Todos os campos devem estar preenchidos;</br>
-Não é possível cadastrar um novo blog post com uma categoria inexistente.
+Não é possível cadastrar uma nova postagem com uma categoria inexistente.
 
 - **Requisição**
   - Body
@@ -341,7 +341,7 @@ Não é possível cadastrar um novo blog post com uma categoria inexistente.
 
 ### ```GET /post```
 
-Obter todos os blog posts.
+Obter todas as postagens.
 
 - **Resposta**
   - ✅ Retorna os posts do blog com sucesso:
@@ -403,10 +403,10 @@ Obter todos os blog posts.
 
 ### ```GET /post:id```
 
-Obter blog post específico pelo ID do blog post.
+Obter postagem específica pelo ID da postagem.
 
 - **Respostas**
-  - ✅ Retorna o blog post com sucesso:
+  - ✅ Retorna a postagem com sucesso:
     ```json
     {
       "id": 1,
@@ -433,7 +433,7 @@ Obter blog post específico pelo ID do blog post.
       ]
     }
     ```
-  - ❌ Blog post não encontrado:
+  - ❌ Postagem não encontrada:
     ```json
     {
       "message": "Post does not exist"
