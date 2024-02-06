@@ -163,6 +163,8 @@ O campo ```password``` precisa ter 6 caracteres ou mais.
     }
     ```
 
+</br>
+
 ### ```GET /user```
 
 Obter a lista completa de usuários.
@@ -192,6 +194,8 @@ Obter a lista completa de usuários.
       /* ... */
     ]
     ```
+
+</br>
 
 ### ```GET /user/:id```
 
@@ -245,6 +249,8 @@ O campo ```name``` não pode estar vazio.
       "message": "\"name\" is required"
     }
     ```
+
+</br>
 
 ### ```GET /categories```
 
@@ -311,6 +317,8 @@ Não é possível cadastrar um novo blog post com uma categoria inexistente.
     }
     ```
 
+</br>
+
 ### ```GET /post```
 
 Obter todos os blog posts.
@@ -370,6 +378,8 @@ Obter todos os blog posts.
     /* ... */
     ]
     ```
+
+</br>
 
 ### ```GET /post:id```
 
