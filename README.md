@@ -78,7 +78,7 @@ Com exceção da criação de usuário, todas as requisições para a API necess
 
 Fazer login no sistema.
 
-### POST /login
+### ```POST /login```
 
 - **Requisição**
   - Body
@@ -107,9 +107,10 @@ Fazer login no sistema.
       "message": "Invalid fields"
     }
     ```
+
 ## Usuários
 
-### POST /user
+### ```POST /user```
 
 Criar um usuário.
 
@@ -161,7 +162,8 @@ O campo ```password``` precisa ter 6 caracteres ou mais.
       "message": "User already registered"
     }
     ```
-### GET /user
+
+### ```GET /user```
 
 Obter a lista completa de usuários.
 
@@ -190,7 +192,8 @@ Obter a lista completa de usuários.
       /* ... */
     ]
     ```
-### GET /user/:id
+
+### ```GET /user/:id```
 
 Obter um usuário específico pelo ID do usuário.
 
@@ -210,9 +213,10 @@ Obter um usuário específico pelo ID do usuário.
       "message": "User does not exist"
     }
     ```
+
 ## Categorias
 
-### POST /categories
+### ```POST /categories```
 
 Criar uma categoria de postagem.
 
@@ -241,7 +245,8 @@ O campo ```name``` não pode estar vazio.
       "message": "\"name\" is required"
     }
     ```
-### GET /categories
+
+### ```GET /categories```
 
 Obter a lista completa de categorias de postagens.
 
@@ -260,9 +265,10 @@ Obter a lista completa de categorias de postagens.
       /* ... */
     ]
     ```
+
 ## Blog Posts
 
-### POST /post
+### ```POST /post```
 
 Criar uma novo post no blog.
 
@@ -304,7 +310,8 @@ Não é possível cadastrar um novo blog post com uma categoria inexistente.
       "message": "one or more \"categoryIds\" not found"
     }
     ```
-### GET /post
+
+### ```GET /post```
 
 Obter todos os blog posts.
 
@@ -363,7 +370,8 @@ Obter todos os blog posts.
     /* ... */
     ]
     ```
-### GET /post:id
+
+### ```GET /post:id```
 
 Obter blog post específico pelo ID do blog post.
 
