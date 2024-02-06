@@ -21,7 +21,7 @@ Este projeto teve como objetivo consolidar e avaliar conhecimentos dos seguintes
 
 O projeto consiste em uma API e um banco de dados para a produção de conteúdo para um blog.
 
-### Rotas da API (endpoints)
+### Rotas da API
 
 #### 1. LOGIN
 
@@ -70,6 +70,8 @@ O corpo da requisição deve seguir o formato abaixo:
 ```
 
 </details>
+
+</br>
 
 #### 2. USER
 
