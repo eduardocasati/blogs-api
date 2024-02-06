@@ -49,8 +49,8 @@ Requisições para a API devem seguir os padrões:
 
 | Método | Descrição |
 |:---|:---|
-| ```GET``` | Retorna informações de um ou mais registros. |
-| ```POST``` | Utilizado para criar um novo registro. |
+| ```GET``` | Retorna informações de um ou mais recursos. |
+| ```POST``` | Utilizado para criar um novo recurso. |
 
 ## Respostas
 
