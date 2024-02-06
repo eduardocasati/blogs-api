@@ -33,7 +33,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 <details><summary>Formato da Requisição:</summary>
 
-```
+```json
 {
   "email": "user@email.com",
   "password": "123456"
@@ -48,7 +48,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ✅ **Login bem-sucedido:**
 
-```
+```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJCcmV0dCBXaWx0c2hpcmUiLCJlbWFpbCI6ImJyZXR0QGVtYWlsLmNvbSIsImltYWdlIjpudWxsLCJpYXQiOjE3MDcxNzY2MzgsImV4cCI6MTcwNzc4MTQzOH0.RLrU3qSMR2nrjT7JPdF0pOnfgkRm_fUaU_wfRA53MV0"
 }
@@ -56,7 +56,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ⚠️ **Os campos não foram devidamente preenchidos:**
 
-```
+```json
 {
   "message": "Some required fields are missing"
 }
@@ -65,7 +65,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ❌ **Usuário ou senha inválidos:**
 
-```
+```json
 {
   "message": "Invalid fields"
 }
@@ -81,7 +81,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 <details><summary>Formato da Requisição:</summary>
 
-```
+```json
 {
   "displayName": "Name Surname",
   "email": "user@email.com",
@@ -100,7 +100,7 @@ O campo ```image``` não é obrigatório.
 
 - ✅ **Usuário criado com sucesso:**
 
-```
+```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZGlzcGxheU5hbWUiOiJCcmV0dCBXaWx0c2hpcmUiLCJlbWFpbCI6ImJyZXR0QGVtYWlsLmNvbSIsImltYWdlIjpudWxsLCJpYXQiOjE3MDcxNzY2MzgsImV4cCI6MTcwNzc4MTQzOH0.RLrU3qSMR2nrjT7JPdF0pOnfgkRm_fUaU_wfRA53MV0"
 }
@@ -108,7 +108,7 @@ O campo ```image``` não é obrigatório.
 
 - ⚠️ **O campo ```displayName``` não foi devidamente preenchido com 8 caracteres ou mais**:
 
-```
+```json
 {
   "message": "\"displayName\" length must be at least 8 characters long"
 }
@@ -116,7 +116,7 @@ O campo ```image``` não é obrigatório.
 
 - ⚠️ **O campo ```email``` não foi devidamente preenchido com o formato ```prefixo@domínio```**:
 
-```
+```json
 {
   "message": "\"email\" must be a valid email"
 }
@@ -124,7 +124,7 @@ O campo ```image``` não é obrigatório.
 
 - ⚠️ **O campo ```password``` não foi devidamente preenchido com 6 caracteres ou mais**:
 
-```
+```json
 {
   "message": "\"password\" length must be at least 6 characters long"
 }
@@ -132,7 +132,7 @@ O campo ```image``` não é obrigatório.
 
 - ❌ **Usuário já existente:**
 
-```
+```json
 {
   "message": "User already registered"
 }
@@ -152,7 +152,7 @@ O campo ```image``` não é obrigatório.
 
 - ✅ **Retorna a lista de usuários com sucesso:**
 
-```
+```json
 [
   {
       "id": 1,
@@ -191,7 +191,7 @@ O campo ```image``` não é obrigatório.
 
 - ✅ **Retorna o usuário com sucesso:**
 
-```
+```json
 {
   "id": 1,
   "displayName": "Lewis Hamilton",
@@ -202,7 +202,7 @@ O campo ```image``` não é obrigatório.
 
 - ❌ **Usuário não encontrado:**
 
-```
+```json
 {
   "message": "User does not exist"
 }
@@ -220,7 +220,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 <details><summary>Formato da Requisição:</summary>
 
-```
+```json
 {
   "name": "Dicas"
 }
@@ -234,7 +234,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ✅ **Categoria criada com sucesso:**
 
-```
+```json
 {
   "id": 3,
   "name": "Dicas"
@@ -243,7 +243,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ⚠️ **O campo ```name``` não foi devidamente preenchido (o campo não pode estar em branco)**:
 
-```
+```json
 {
   "message": "\"name\" is required"
 }
@@ -263,7 +263,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ✅ **Retorna a lista de categorias com sucesso:**
 
-```
+```json
 [
   {
       "id": 1,
@@ -290,7 +290,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 <details><summary>Formato da Requisição:</summary>
 
-```
+```json
 {
   "title": "Últimas atualizações, 1 de Agosto",
   "content": "O texto completo do post",
@@ -306,7 +306,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ✅ **Post criado com sucesso:**
 
-```
+```json
 {
   "id": 3,
   "title": "Últimas atualizações, 1 de Agosto",
@@ -319,7 +319,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ⚠️ **Todos os campos não foram devidamente preenchidos (nenhum campo pode estar em branco)**:
 
-```
+```json
 {
   "message": "Some required fields are missing"
 }
@@ -327,7 +327,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ⚠️ **Se uma ou mais categorias informadas no campo ```categoryIds``` não existir**:
 
-```
+```json
 {
   "message": "one or more \"categoryIds\" not found"
 }
@@ -347,7 +347,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ✅ **Retorna os posts do blog com sucesso:**
 
-```
+```json
 [
   {
     "id": 1,
@@ -418,7 +418,7 @@ O corpo da requisição deve seguir o formato abaixo:
 
 - ✅ **Retorna o post com sucesso:**
 
-```
+```json
 {
   "id": 1,
   "title": "Post do Ano",
