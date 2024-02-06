@@ -164,13 +164,13 @@ O campo ```password``` precisa ter 6 caracteres ou mais.
       "message": "\"displayName\" length must be at least 8 characters long"
     }
     ```
-  - ⚠️ O campo email não foi devidamente preenchido com o formato prefixo@domínio:
+  - ⚠️ O campo ```email``` não foi devidamente preenchido com o formato prefixo@domínio:
     ```json
     {
       "message": "\"email\" must be a valid email"
     }
     ```
-  - ⚠️ O campo password não foi devidamente preenchido com 6 caracteres ou mais:
+  - ⚠️ O campo ```password``` não foi devidamente preenchido com 6 caracteres ou mais:
     ```json
     {
       "message": "\"password\" length must be at least 6 characters long"
