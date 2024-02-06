@@ -126,7 +126,7 @@ O campo ```password``` precisa ter 6 caracteres ou mais.
       "displayName": "Name Surname",
       "email": "user@email.com",
       "password": "123456",
-      "image": "https://exemple-images.com/images/1234567890/image.jpg"
+      "image": "https://example-images.com/images/1234567890/image.jpg"
     }
     // O campo image é opcional
     ```
