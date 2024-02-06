@@ -313,7 +313,7 @@ Não é possível cadastrar uma nova postagem com uma categoria inexistente.
     }
     ```
 - **Respostas**
-  - ✅ Post criado com sucesso:
+  - ✅ Postagem criada com sucesso:
     ```json
     {
       "id": 3,
@@ -344,7 +344,7 @@ Não é possível cadastrar uma nova postagem com uma categoria inexistente.
 Obter todas as postagens.
 
 - **Resposta**
-  - ✅ Retorna os posts do blog com sucesso:
+  - ✅ Retorna as postagens do blog com sucesso:
     ```json
     [
       {
