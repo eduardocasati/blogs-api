@@ -130,7 +130,7 @@ O campo ```image``` não é obrigatório.
 }
 ```
 
-- ⚠️ **Usuário já existente:**
+- ❌ **Usuário já existente:**
 
 ```
 {
@@ -200,7 +200,7 @@ O campo ```image``` não é obrigatório.
 }
 ```
 
-- ⚠️ **Usuário não encontrado:**
+- ❌ **Usuário não encontrado:**
 
 ```
 {
@@ -459,4 +459,4 @@ Siga os passos abaixo:
 5. Preencha o banco de dados: ```npm run seed```
 6. Inicie o servidor: ```npm start```
 
-Com o projeto inicializado após as etapas acima, você pode fazer requisições à API na porta 3001: ```http://localhost:3001/{endpoint}```.
+Com o projeto inicializado após as etapas acima, você pode fazer requisições à API na porta 3001: ```http://localhost:3001/{rota}```.
