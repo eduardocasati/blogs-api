@@ -43,6 +43,26 @@ Com o projeto inicializado após as etapas acima, você pode fazer requisições
 
 <summary>Mostrar</summary>
 
+### Índice
+
+- [Métodos](#métodos)
+- [Respostas](#respostas)
+- [Autenticação](#autenticação)
+- [Rotas](#rotas)
+   - [Login](#login)
+      - [POST /login](#post-login)
+   - [Usuários](#usuários)
+      - [POST /user](#post-user)
+      - [GET /user](#get-user)
+      - [GET /user/:id](#get-userid)
+   - [Categorias](#categorias)
+      - [POST /categories](#post-categories)
+      - [GET /categories](#get-categories)
+   - [Blog Posts](#blog-posts)
+      - [POST /post](#post-post)
+      - [GET /post](#get-post)
+      - [GET /post/:id](#get-postid)
+
 ## Métodos
 
 Requisições para a API devem seguir os padrões:
